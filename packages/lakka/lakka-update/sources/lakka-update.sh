@@ -2,10 +2,13 @@
 
 source /etc/os-release
 
-MIRROR=http://le.builds.lakka.tv
+#MIRROR=http://le.builds.lakka.tv
+MIRROR=http://scottpowered.com/esper
 
 FILE=`wget $MIRROR/${LIBREELEC_ARCH}/.index -q -O - | head -1`
-URL=$MIRROR/${LIBREELEC_ARCH}/$FILE
+#FILE=Lakka-RPi2.arm-esper.img.gz
+#URL=$MIRROR/${LIBREELEC_ARCH}/$FILE
+URL=https://github.com/scobo/Lakka-LibreELEC/archive/$FILE
 
 rm -rf ~/.update/*
 

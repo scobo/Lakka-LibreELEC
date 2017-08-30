@@ -100,7 +100,7 @@ makeinstall_target() {
   mkdir -p $INSTALL/usr/share/audio_filters
     cp $ROOT/$PKG_BUILD/libretro-common/audio/dsp_filters/*.so $INSTALL/usr/share/audio_filters
     cp $ROOT/$PKG_BUILD/libretro-common/audio/dsp_filters/*.dsp $INSTALL/usr/share/audio_filters
-  
+
   # General configuration
   sed -i -e "s/# libretro_directory =/libretro_directory = \"\/tmp\/cores\"/" $INSTALL/etc/retroarch.cfg
   sed -i -e "s/# libretro_info_path =/libretro_info_path = \"\/tmp\/cores\"/" $INSTALL/etc/retroarch.cfg
@@ -118,7 +118,7 @@ makeinstall_target() {
   sed -i -e "s/# cheat_database_path =/cheat_database_path =\/tmp\/database\/cht/" $INSTALL/etc/retroarch.cfg
   sed -i -e "s/# menu_driver = \"rgui\"/menu_driver = \"xmb\"/" $INSTALL/etc/retroarch.cfg
   echo "core_assets_directory =/storage/roms/downloads" >> $INSTALL/etc/retroarch.cfg
-  
+
   # Video
   sed -i -e "s/# video_windowed_fullscreen = true/video_windowed_fullscreen = false/" $INSTALL/etc/retroarch.cfg
   sed -i -e "s/# video_smooth = true/video_smooth = false/" $INSTALL/etc/retroarch.cfg
@@ -139,7 +139,7 @@ makeinstall_target() {
 
   # Saving
   echo "savestate_thumbnail_enable = \"false\"" >> $INSTALL/etc/retroarch.cfg
-  
+
   # Input
   sed -i -e "s/# input_driver = sdl/input_driver = udev/" $INSTALL/etc/retroarch.cfg
   sed -i -e "s/# input_max_users = 16/input_max_users = 5/" $INSTALL/etc/retroarch.cfg
@@ -163,7 +163,7 @@ makeinstall_target() {
   if [ "$ARCH" == "arm" ]; then
     sed -i -e "s/# core_updater_buildbot_url = \"http:\/\/buildbot.libretro.com\"/core_updater_buildbot_url = \"http:\/\/buildbot.libretro.com\/nightly\/linux\/armhf\/latest\/\"/" $INSTALL/etc/retroarch.cfg
   fi
-  
+
   # Playlists
   echo "playlist_names = \"$RA_PLAYLIST_NAMES\"" >> $INSTALL/etc/retroarch.cfg
   echo "playlist_cores = \"$RA_PLAYLIST_CORES\"" >> $INSTALL/etc/retroarch.cfg
@@ -183,10 +183,10 @@ makeinstall_target() {
   fi
 }
 
-post_install() {  
+post_install() {
   # link default.target to retroarch.target
   ln -sf retroarch.target $INSTALL/usr/lib/systemd/system/default.target
-  
+
   enable_service retroarch-autostart.service
   enable_service retroarch.service
   enable_service tmp-cores.mount

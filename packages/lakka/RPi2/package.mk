@@ -23,7 +23,7 @@ PKG_VERSION=""
 PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
-PKG_SITE="https://github.com/lakkatv/Lakka"
+PKG_SITE="https://github.com/scobo/Lakka-LibreELEC"
 PKG_URL=""
 PKG_DEPENDS_TARGET="retroarch $LIBRETRO_CORES wii-u-gc-adapter wiringPi"
 PKG_PRIORITY="optional"
@@ -33,4 +33,3 @@ PKG_LONGDESC=""
 
 PKG_IS_ADDON="no"
 PKG_AUTORECONF="no"
-

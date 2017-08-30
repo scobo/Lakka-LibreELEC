@@ -35,7 +35,8 @@ PKG_IS_ADDON="no"
 PKG_AUTORECONF="no"
 
 post_unpack() {
-  mv $BUILD/beetle-vb-libretro-$PKG_VERSION* $BUILD/$PKG_NAME-$PKG_VERSION
+  cp -r $BUILD/beetle-vb-libretro-$PKG_VERSION* $BUILD/$PKG_NAME-$PKG_VERSION
+  rm -rf $BUILD/beetle-vb-libretro-$PKG_VERSION*
 }
 
 makeinstall_target() {

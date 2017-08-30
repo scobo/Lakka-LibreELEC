@@ -54,7 +54,7 @@ post_install() {
     ln -sf /usr/sbin $ROOT/$BUILD/initramfs/sbin
 
     mkdir -p $ROOT/$BUILD/image/
-    fakeroot -- sh -c \
+    fakeroot-tcp -- sh -c \
       "mkdir -p dev; mknod -m 600 dev/console c 5 1; find . | cpio -H newc -ov -R 0:0 | gzip -n -9 -f > $ROOT/$BUILD/image/initramfs.cpio"
   )
 }
