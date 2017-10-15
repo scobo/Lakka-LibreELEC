@@ -38,6 +38,6 @@ PKG_AUTORECONF="no"
 PKG_CONFIGURE_OPTS_HOST="--with-gnu-ld"
 
 makeinstall_host() {
-  ln -sf /usr/bin/fakeroot-tcp $ROOT/$TOOLCHAIN/bin/fakeroot
+  ln -sf /usr/bin/fakeroot-tcp $TOOLCHAIN/bin/fakeroot
 }
 
