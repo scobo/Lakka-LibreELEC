@@ -69,6 +69,8 @@ DISTRO=Esper PROJECT=H3 SYSTEM=bpim2p ARCH=arm make image -j8
 DISTRO=Esper PROJECT=H3 SYSTEM=bx2 ARCH=arm make image -j8
 >&2 echo "TinkerBoard.arm"
 #DISTRO=Esper PROJECT=Rockchip DEVICE=TinkerBoard ARCH=arm make image -j8
+>&2 echo "ROCK64.arm"
+#DISTRO=Esper PROJECT=Rockchip DEVICE=ROCK64 ARCH=arm make image -j8
 
 rm target/*.kernel
 rm target/*.system
