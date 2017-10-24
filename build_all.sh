@@ -10,12 +10,6 @@ DISTRO=Esper PROJECT=Generic ARCH=i386 make image -j8
 DISTRO=Esper PROJECT=RPi ARCH=arm make noobs -j8
 >&2 echo "RPi2.arm + noobs"
 DISTRO=Esper PROJECT=RPi2 ARCH=arm make noobs -j8
->&2 echo "a20.arm"
-DISTRO=Esper PROJECT=a20 ARCH=arm make image -j8
->&2 echo "a10.arm"
-DISTRO=Esper PROJECT=a10 ARCH=arm make image -j8
->&2 echo "Bananapi.arm"
-DISTRO=Esper PROJECT=Bananapi ARCH=arm make image -j8
 >&2 echo "imx6.cuboxi.arm"
 DISTRO=Esper PROJECT=imx6 SYSTEM=cuboxi ARCH=arm make image -j8
 >&2 echo "imx6.udoo.arm"
@@ -51,22 +45,6 @@ DISTRO=Esper PROJECT=S805 SYSTEM=M201D ARCH=arm make image -j8
 DISTRO=Esper PROJECT=S805 SYSTEM=MK808B-Plus ARCH=arm make image -j8
 >&2 echo "S905.arm"
 DISTRO=Esper PROJECT=S905 ARCH=arm make image -j8
->&2 echo "H3.op2.arm"
-DISTRO=Esper PROJECT=H3 SYSTEM=opi2 ARCH=arm make image -j8
->&2 echo "H3.opipc.arm"
-DISTRO=Esper PROJECT=H3 SYSTEM=opipc ARCH=arm make image -j8
->&2 echo "H3.opiplus.arm"
-DISTRO=Esper PROJECT=H3 SYSTEM=opiplus ARCH=arm make image -j8
->&2 echo "H3.opione.arm"
-DISTRO=Esper PROJECT=H3 SYSTEM=opione ARCH=arm make image -j8
->&2 echo "H3.opilite.arm"
-DISTRO=Esper PROJECT=H3 SYSTEM=opilite ARCH=arm make image -j8
->&2 echo "H3.opiplus2e.arm"
-DISTRO=Esper PROJECT=H3 SYSTEM=opiplus2e ARCH=arm make image -j8
->&2 echo "H3.bpim2p.arm"
-DISTRO=Esper PROJECT=H3 SYSTEM=bpim2p ARCH=arm make image -j8
->&2 echo "H3.bx2.arm"
-DISTRO=Esper PROJECT=H3 SYSTEM=bx2 ARCH=arm make image -j8
 >&2 echo "TinkerBoard.arm"
 #DISTRO=Esper PROJECT=Rockchip DEVICE=TinkerBoard ARCH=arm make image -j8
 >&2 echo "ROCK64.arm"
