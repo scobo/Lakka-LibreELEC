@@ -10,6 +10,9 @@ DISTRO=Esper PROJECT=Generic ARCH=i386 make image -j8
 DISTRO=Esper PROJECT=RPi ARCH=arm make noobs -j8
 >&2 echo "RPi2.arm + noobs"
 DISTRO=Esper PROJECT=RPi2 ARCH=arm make noobs -j8
+>&2 echo "Allwinner.arm"
+DISTRO=Esper PROJECT=Allwinner SYSTEM=Cubietruck ARCH=arm make image -j8
+DISTRO=Esper PROJECT=Allwinner SYSTEM=opipc ARCH=arm make image -j8
 >&2 echo "imx6.cuboxi.arm"
 DISTRO=Esper PROJECT=imx6 SYSTEM=cuboxi ARCH=arm make image -j8
 >&2 echo "imx6.udoo.arm"
