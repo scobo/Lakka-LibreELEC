@@ -14,7 +14,7 @@ DISTRO=Esper PROJECT=RPi2 ARCH=arm make noobs -j8
 DISTRO=Esper PROJECT=Allwinner SYSTEM=Bananapi ARCH=arm make image -j8
 DISTRO=Esper PROJECT=Allwinner SYSTEM=Cubieboard2 ARCH=arm make image -j8
 DISTRO=Esper PROJECT=Allwinner SYSTEM=Cubietruck ARCH=arm make image -j8
-DISTRO=Esper PROJECT=Allwinner SYSTEM=opipc ARCH=arm make image -j8
+DISTRO=Esper PROJECT=Allwinner SYSTEM=orangepi_pc ARCH=arm make image -j8
 DISTRO=Esper PROJECT=Allwinner SYSTEM=nanopi_m1_plus ARCH=arm make image -j8
 >&2 echo "imx6.cuboxi.arm"
 DISTRO=Esper PROJECT=imx6 SYSTEM=cuboxi ARCH=arm make image -j8
@@ -55,7 +55,7 @@ DISTRO=Esper PROJECT=S905 ARCH=arm make image -j8
 #DISTRO=Esper PROJECT=Rockchip DEVICE=TinkerBoard ARCH=arm make image -j8
 >&2 echo "ROCK64.arm"
 #DISTRO=Esper PROJECT=Rockchip DEVICE=ROCK64 ARCH=arm make image -j8
->&2 echo "MiQi.arm"
+#>&2 echo "MiQi.arm"
 #DISTRO=Esper PROJECT=Rockchip DEVICE=MiQi ARCH=arm make image -j8
 
 rm target/*.kernel
