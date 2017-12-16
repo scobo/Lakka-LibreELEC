@@ -10,8 +10,8 @@ diff -Naur linux-3.7.9/drivers/media/usb/dvb-usb/pctv452e.c linux-3.7.9.patch/dr
 				.endpoint = 0x02,
 				.u = {
 					.isoc = {
--						.framesperurb = 4,
-+						.framesperurb = 64,
+-						.framlakkaurb = 4,
++						.framlakkaurb = 64,
 						.framesize = 940,
 						.interval = 1
 					}

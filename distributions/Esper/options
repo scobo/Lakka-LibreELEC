@@ -1,12 +1,12 @@
 # Name of the Distro to build (full name, without special characters)
-  DISTRONAME="Esper"
+  DISTRONAME="Lakka"
 
 # short project description
   DESCRIPTION="The DIY retro emulation console"
 
 # Welcome Message for e.g. SSH Server (up to 5 Lines)
   GREETING0="###########################################"
-  GREETING1="#            Esper - Retrobox             #"
+  GREETING1="#            Lakka - Retrobox             #"
   GREETING2="# ...... visit http://www.lakka.tv ...... #"
   GREETING3="###########################################"
   GREETING4=""
