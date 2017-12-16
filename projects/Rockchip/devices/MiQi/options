@@ -31,5 +31,7 @@
   # kernel image name
     KERNEL_NAME="zImage"
 
+    ADDITIONAL_DRIVERS="$ADDITIONAL_DRIVERS rfkill vulkan-loader"
+
   # kernel serial console
     EXTRA_CMDLINE="console=uart8250,mmio32,0xff690000"
