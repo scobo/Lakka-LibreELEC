@@ -38,7 +38,8 @@ makeinstall_target() {
 
 post_makeinstall_target() {
   mkdir -p $INSTALL/usr/share/zoneinfo
-  mv $INSTALL/etc/zoneinfo/* $INSTALL/usr/share/zoneinfo
+  #mv $INSTALL/etc/zoneinfo/* $INSTALL/usr/share/zoneinfo
+  cp -r $INSTALL/etc/zoneinfo/* $INSTALL/usr/share/zoneinfo
 
   rm -rf $INSTALL/etc
   mkdir -p $INSTALL/etc
