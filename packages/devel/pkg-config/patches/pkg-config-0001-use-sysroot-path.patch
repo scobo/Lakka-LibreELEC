@@ -1,28 +1,22 @@
 diff -Naur a/pkg.c b/pkg.c
---- a/pkg.c	2016-02-26 17:56:52.000000000 +0100
-+++ b/pkg.c	2017-01-02 19:48:34.000000000 +0100
-@@ -468,11 +468,14 @@
+--- a/pkg.c	2017-03-20 09:34:23.000000000 -0700
++++ b/pkg.c	2017-12-30 15:20:14.358635900 -0800
+@@ -433,7 +433,7 @@
      Flag *flag = tmp->data;
      char *tmpstr = flag->arg;
  
 -    if (pcsysrootdir != NULL && flag->type & (CFLAGS_I | LIBS_L)) {
 +    if (pcsysrootdir != NULL && flag->type & (CFLAGS_I | LIBS_L) && strncmp(tmpstr+2, pcsysrootdir, strlen(pcsysrootdir)) != 0) {
-       g_string_append_c (str, '-');
-       g_string_append_c (str, tmpstr[1]);
-       g_string_append (str, pcsysrootdir);
-       g_string_append (str, tmpstr+2);
-+    } else if (pcsysrootdir != NULL && strncmp(tmpstr, "/usr", 4) == 0 && strncmp(tmpstr, pcsysrootdir, strlen(pcsysrootdir)) != 0) {
-+      g_string_append (str, pcsysrootdir);
-+      g_string_append (str, tmpstr);
-     } else {
-       g_string_append (str, tmpstr);
-     }
-@@ -1087,6 +1090,8 @@
-         {
-           if (str->len > 0)
-             g_string_append_c (str, ' ');
-+          if (pcsysrootdir != NULL && (strcmp(varname, "includedir") == 0 || strcmp(varname, "libdir") == 0) && strncmp(var, pcsysrootdir, strlen(pcsysrootdir)) != 0)
-+            g_string_append (str, pcsysrootdir);
-           g_string_append (str, var);
-           g_free (var);
-         }
+       /* Handle non-I Cflags like -isystem */
+       if (flag->type & CFLAGS_I && strncmp (tmpstr, "-I", 2) != 0) {
+         char *space = strchr (tmpstr, ' ');
+@@ -443,6 +443,9 @@
+         g_string_append_len (str, tmpstr, space - tmpstr + 1);
+         g_string_append (str, pcsysrootdir);
+         g_string_append (str, space + 1);
++      } else if (pcsysrootdir != NULL && strncmp(tmpstr, "/usr", 4) == 0 && strncmp(tmpstr, pcsysrootdir, strlen(pcsysrootdir)) != 0) {
++        g_string_append (str, pcsysrootdir);
++        g_string_append (str, tmpstr);
+       } else {
+         g_string_append_c (str, '-');
+         g_string_append_c (str, tmpstr[1]);
