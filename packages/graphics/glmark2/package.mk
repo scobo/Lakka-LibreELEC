@@ -17,7 +17,7 @@
 ################################################################################
 
 PKG_NAME="glmark2"
-PKG_VERSION="182dcbf"
+PKG_VERSION="b779dc4"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/glmark2/glmark2"
