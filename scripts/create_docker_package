@@ -87,7 +87,7 @@ add_volume() {
 
 case "$ARCH" in
     arm)
-        projects="imx6 RPi RPi2"
+        projects="imx6 RPi RPi2 RPi3"
         ;;
     x86_64)
         projects="Generic"

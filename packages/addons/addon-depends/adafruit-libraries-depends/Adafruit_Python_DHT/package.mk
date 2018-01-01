@@ -35,6 +35,9 @@ case $PROJECT in
   RPi2)
     RPI_VERSION="--force-pi2"
     ;;
+  RPi3)
+    RPI_VERSION="--force-pi2"
+    ;;
 esac
 
 pre_make_target() {

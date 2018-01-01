@@ -49,6 +49,9 @@ make_target() {
     RPi2)
       make platform=armv7-neon-hardfloat-cortex-a7
       ;;
+    RPi3)
+      make platform=armv8-neon-hardfloat-cortex-a53
+      ;;
     imx6)
       make platform=armv7-neon-hardfloat-cortex-a9
       ;;
