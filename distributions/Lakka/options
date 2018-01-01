@@ -1,7 +1,7 @@
 # Name of the Distro to build (full name, without special characters)
   DISTRONAME="Lakka"
-  LIBREELEC_VERSION="devel"
-  OS_VERSION="2.1"
+  LIBREELEC_VERSION="2.1.1"
+  OS_VERSION="2.1.1"
 
 # short project description
   DESCRIPTION="The DIY retro emulation console"
@@ -237,7 +237,7 @@
 
 # Distribution Specific source location
   DISTRO_MIRROR="http://sources.libreelec.tv/mirror"
-  DISTRO_SRC="http://sources.libreelec.tv/$LIBREELEC_VERSION"
+  DISTRO_SRC="http://sources.libreelec.tv/8.2.2"
 
 # Addon Server Url
   ADDON_SERVER_URL="http://addons.openelec.tv"
