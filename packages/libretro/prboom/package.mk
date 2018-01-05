@@ -19,8 +19,7 @@
 ################################################################################
 
 PKG_NAME="prboom"
-PKG_VERSION="79bcd0b"
-PKG_REV="1"
+PKG_VERSION="a907bcc"
 PKG_ARCH="any"
 PKG_LICENSE="GPLv2"
 PKG_SITE="https://github.com/libretro/libretro-prboom"
