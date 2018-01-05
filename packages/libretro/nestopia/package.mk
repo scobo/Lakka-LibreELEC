@@ -36,7 +36,20 @@ PKG_USE_CMAKE="no"
 
 make_target() {
   cd $PKG_BUILD
-  make -C libretro
+  case $PROJECT in
+    RPi|Gamegirl|Slice)
+      make platform=rpi -C libretro
+      ;;
+    RPi2|Slice3)
+      make platform=rpi2 -C libretro
+      ;;
+    RPi3)
+      make platform=rpi3 -C libretro
+      ;;
+    *)
+      make -C libretro
+      ;;
+  esac
 }
 
 makeinstall_target() {
