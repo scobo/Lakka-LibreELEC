@@ -19,8 +19,7 @@
 ################################################################################
 
 PKG_NAME="mame"
-PKG_VERSION="578bff0"
-PKG_REV="1"
+PKG_VERSION="ae98d8c"
 PKG_ARCH="any"
 PKG_LICENSE="MAME"
 PKG_SITE="https://github.com/libretro/mame.git"
