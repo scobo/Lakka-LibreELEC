@@ -17,7 +17,7 @@
 ################################################################################
 
 PKG_NAME="lame"
-PKG_VERSION="3.99.5"
+PKG_VERSION="3.100"
 PKG_ARCH="any"
 PKG_LICENSE="LGPL"
 PKG_SITE="http://lame.sourceforge.net/"
