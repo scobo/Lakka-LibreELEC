@@ -19,8 +19,7 @@
 ################################################################################
 
 PKG_NAME="mame2000"
-PKG_VERSION="f7453f8"
-PKG_REV="1"
+PKG_VERSION="57f0cac"
 PKG_ARCH="any"
 PKG_LICENSE="MAME"
 PKG_SITE="https://github.com/libretro/mame2000-libretro.git"
