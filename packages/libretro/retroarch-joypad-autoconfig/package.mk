@@ -19,8 +19,7 @@
 ################################################################################
 
 PKG_NAME="retroarch-joypad-autoconfig"
-PKG_VERSION="465cfec"
-PKG_REV="1"
+PKG_VERSION="c9901b5"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/lakkatv/retroarch-joypad-autoconfig"
