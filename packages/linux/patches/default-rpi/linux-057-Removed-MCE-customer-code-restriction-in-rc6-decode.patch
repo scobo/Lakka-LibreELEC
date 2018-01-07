@@ -1,5 +1,5 @@
---- linux/drivers/media/rc/ir-rc6-decoder.c	2012-11-25 22:08:13.148418669 -0800
-+++ linux.patch/drivers/media/rc/ir-rc6-decoder.c	2012-11-25 22:07:48.864417975 -0800
+--- a/drivers/media/rc/ir-rc6-decoder.c	2018-01-05 06:48:59.000000000 -0800
++++ b/drivers/media/rc/ir-rc6-decoder.c	2018-01-05 16:34:43.146703559 -0800
 @@ -39,7 +39,6 @@
  #define RC6_STARTBIT_MASK	0x08	/* for the header bits */
  #define RC6_6A_MCE_TOGGLE_MASK	0x8000	/* for the body bits */
@@ -8,19 +8,19 @@
  #ifndef CHAR_BIT
  #define CHAR_BIT 8	/* Normally in <limits.h> */
  #endif
-@@ -257,14 +256,9 @@ again:
+@@ -252,14 +251,9 @@
  				toggle = 0;
  				break;
  			case 32:
 -				if ((scancode & RC6_6A_LCC_MASK) == RC6_6A_MCE_CC) {
--					protocol = RC_TYPE_RC6_MCE;
+-					protocol = RC_PROTO_RC6_MCE;
 -					toggle = !!(scancode & RC6_6A_MCE_TOGGLE_MASK);
 -					scancode &= ~RC6_6A_MCE_TOGGLE_MASK;
 -				} else {
--					protocol = RC_TYPE_RC6_6A_32;
+-					protocol = RC_PROTO_RC6_6A_32;
 -					toggle = 0;
 -				}
-+				protocol = RC_TYPE_RC6_MCE;
++				protocol = RC_PROTO_RC6_MCE;
 +				toggle = !!(scancode & RC6_6A_MCE_TOGGLE_MASK);
 +				scancode &= ~RC6_6A_MCE_TOGGLE_MASK;
  				break;

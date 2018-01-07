@@ -17,18 +17,18 @@
 ################################################################################
 
 PKG_NAME="util-linux"
-PKG_VERSION="2.29"
+PKG_VERSION="2.31.1"
+PKG_SHA256="1a51b16fa9cd51d26ef9ab52d2f1de12403b810fc8252bf7d478df91b3cddf11"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
-PKG_URL="http://www.kernel.org/pub/linux/utils/util-linux/v2.29/$PKG_NAME-$PKG_VERSION.tar.xz"
+PKG_URL="http://www.kernel.org/pub/linux/utils/util-linux/v2.31/$PKG_NAME-$PKG_VERSION.tar.xz"
+PKG_DEPENDS_HOST="toolchain"
 PKG_DEPENDS_TARGET="toolchain"
 PKG_DEPENDS_INIT="toolchain"
 PKG_SECTION="system"
 PKG_SHORTDESC="util-linux: Miscellaneous system utilities for Linux"
 PKG_LONGDESC="The util-linux package contains a large variety of low-level system utilities that are necessary for a Linux system to function. Among many features, Util-linux contains the fdisk configuration tool and the login program."
-
-PKG_IS_ADDON="no"
-PKG_AUTORECONF="yes"
+PKG_TOOLCHAIN="autotools"
 
 UTILLINUX_CONFIG_DEFAULT="--disable-gtk-doc \
                           --disable-nls \
@@ -36,7 +36,6 @@ UTILLINUX_CONFIG_DEFAULT="--disable-gtk-doc \
                           --enable-tls \
                           --disable-all-programs \
                           --enable-chsh-only-listed \
-                          --enable-libmount-force-mountinfo \
                           --disable-bash-completion \
                           --disable-colors-default \
                           --disable-pylibmount \
@@ -49,9 +48,9 @@ UTILLINUX_CONFIG_DEFAULT="--disable-gtk-doc \
                           --without-audit \
                           --without-udev \
                           --without-ncurses \
+                          --without-ncursesw \
                           --without-readline \
                           --without-slang \
-                          --without-termcap \
                           --without-tinfo \
                           --without-utempter \
                           --without-util \
@@ -69,6 +68,7 @@ PKG_CONFIGURE_OPTS_TARGET="$UTILLINUX_CONFIG_DEFAULT \
                            --enable-libsmartcols \
                            --enable-losetup \
                            --enable-fsck \
+                           --enable-fstrim \
                            --enable-blkid"
 
 if [ "$SWAP_SUPPORT" = "yes" ]; then
@@ -94,6 +94,7 @@ post_makeinstall_target() {
   if [ "$SWAP_SUPPORT" = "yes" ]; then
     mkdir -p $INSTALL/usr/lib/libreelec
       cp -PR $PKG_DIR/scripts/mount-swap $INSTALL/usr/lib/libreelec
+      chmod +x $INSTALL/usr/lib/libreelec/mount-swap
 
     mkdir -p $INSTALL/etc
       cat $PKG_DIR/config/swap.conf | \

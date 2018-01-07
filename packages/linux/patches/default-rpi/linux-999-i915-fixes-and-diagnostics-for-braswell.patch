@@ -11,10 +11,11 @@ diff --git a/drivers/gpu/drm/i915/i915_debugfs.c b/drivers/gpu/drm/i915/i915_deb
 index 1035468..2cff44a 100644
 --- a/drivers/gpu/drm/i915/i915_debugfs.c
 +++ b/drivers/gpu/drm/i915/i915_debugfs.c
-@@ -2434,6 +2434,68 @@ static int i915_rps_boost_info(struct seq_file *m, void *data)
- 	spin_unlock(&dev_priv->rps.client_lock);
+@@ -505,6 +505,68 @@
+ 		mutex_unlock(&dev->struct_mutex);
+ 	}
  	mutex_unlock(&dev->filelist_mutex);
- 
++	
 +	if (INTEL_INFO(dev)->gen >= 6) {
 +		u32 rpmodectl, rpinclimit, rpdeclimit;
 +		u32 rpstat, cagf;
@@ -76,38 +77,10 @@ index 1035468..2cff44a 100644
 +			   "efficient (RPe) frequency: %d MHz\n",
 +			   intel_gpu_freq(dev_priv, dev_priv->rps.efficient_freq));
 +	}
-+
+ 
  	return 0;
  }
  
 -- 
 2.7.4
-
-
-From d77c081cd5ea0d278b314ee2043556d2bd9aacaf Mon Sep 17 00:00:00 2001
-From: fritsch <peter.fruehberger@gmail.com>
-Date: Sat, 13 Aug 2016 22:56:37 +0200
-Subject: [PATCH 2/2] drm/i915: intel-pm enable thresholds
-
----
- drivers/gpu/drm/i915/intel_pm.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
-
-diff --git a/drivers/gpu/drm/i915/intel_pm.c b/drivers/gpu/drm/i915/intel_pm.c
-index 2863b92..f3aaef2 100644
---- a/drivers/gpu/drm/i915/intel_pm.c
-+++ b/drivers/gpu/drm/i915/intel_pm.c
-@@ -4511,8 +4511,7 @@ static void valleyview_set_rps(struct drm_device *dev, u8 val)
- 
- 	if (val != dev_priv->rps.cur_freq) {
- 		vlv_punit_write(dev_priv, PUNIT_REG_GPU_FREQ_REQ, val);
--		if (!IS_CHERRYVIEW(dev_priv))
--			gen6_set_rps_thresholds(dev_priv, val);
-+		gen6_set_rps_thresholds(dev_priv, val);
- 	}
- 
- 	dev_priv->rps.cur_freq = val;
--- 
-2.7.4
-
 

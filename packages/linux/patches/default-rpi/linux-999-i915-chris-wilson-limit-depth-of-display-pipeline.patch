@@ -25,36 +25,36 @@ diff --git a/drivers/gpu/drm/i915/intel_display.c b/drivers/gpu/drm/i915/intel_d
 index af551a2c89ba..05ad77dae2e8 100644
 --- a/drivers/gpu/drm/i915/intel_display.c
 +++ b/drivers/gpu/drm/i915/intel_display.c
-@@ -12695,9 +12695,11 @@ compute_baseline_pipe_bpp(struct intel_crtc *crtc,
+@@ -10648,9 +10648,11 @@
  			  struct intel_crtc_state *pipe_config)
  {
- 	struct drm_device *dev = crtc->base.dev;
+ 	struct drm_i915_private *dev_priv = to_i915(crtc->base.dev);
 -	struct drm_atomic_state *state;
 +	struct drm_atomic_state *state = pipe_config->base.state;
-+
++	
  	struct drm_connector *connector;
  	struct drm_connector_state *connector_state;
 +	struct drm_plane_state *plane_state;
  	int bpp, i;
  
- 	if ((IS_G4X(dev) || IS_VALLEYVIEW(dev) || IS_CHERRYVIEW(dev)))
-@@ -12707,11 +12709,14 @@ compute_baseline_pipe_bpp(struct intel_crtc *crtc,
+ 	if ((IS_G4X(dev_priv) || IS_VALLEYVIEW(dev_priv) ||
+@@ -10661,10 +10663,14 @@
  	else
  		bpp = 8*3;
  
 +	plane_state = drm_atomic_get_plane_state(state, crtc->base.primary);
 +	if (plane_state->fb->depth < bpp)
-+		bpp = 8*3;
++	    bpp = 8*3;
  
-+	DRM_DEBUG_KMS("initial pipeline bpp = %d (fb depth %d)\n",
-+		      bpp, plane_state->fb->depth);
- 	pipe_config->pipe_bpp = bpp;
+-	pipe_config->pipe_bpp = bpp;
++    DRM_DEBUG_KMS("initial pipeline bpp = %d (fb depth %d)\n",
++    	      bpp, plane_state->fb->depth);
  
 -	state = pipe_config->base.state;
--
++	pipe_config->pipe_bpp = bpp;
+ 
  	/* Clamp display bpp to EDID value */
- 	for_each_connector_in_state(state, connector, connector_state, i) {
- 		if (connector_state->crtc != &crtc->base)
+ 	for_each_new_connector_in_state(state, connector, connector_state, i) {
 -- 
 2.9.3
 
