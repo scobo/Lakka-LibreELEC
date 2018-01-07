@@ -22,7 +22,7 @@
 # in Xorg.log
 
 PKG_NAME="libepoxy"
-PKG_VERSION="1.3.1"
+PKG_VERSION="1.4.3"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/anholt/libepoxy"
