@@ -1,0 +1,12 @@
+diff --git a/src/xdr_sizeof.c b/src/xdr_sizeof.c
+index d23fbd141..bfc18a0c4 100644
+--- a/src/xdr_sizeof.c
++++ b/src/xdr_sizeof.c
+@@ -39,6 +39,7 @@
+ #include <rpc/xdr.h>
+ #include <sys/types.h>
+ #include <stdlib.h>
++#include <stdint.h> /* for uintptr_t */
+ #include "un-namespace.h"
+ 
+ /* ARGSUSED */
