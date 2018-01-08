@@ -17,7 +17,7 @@
 ################################################################################
 
 PKG_NAME="nano"
-PKG_VERSION="2.5.3"
+PKG_VERSION="2.9.2"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.nano-editor.org/"
