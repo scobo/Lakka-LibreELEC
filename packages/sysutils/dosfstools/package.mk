@@ -17,7 +17,7 @@
 ################################################################################
 
 PKG_NAME="dosfstools"
-PKG_VERSION="3.0.28"
+PKG_VERSION="4.1"
 PKG_ARCH="any"
 PKG_LICENSE="GPLv3"
 PKG_SITE="https://github.com/dosfstools/dosfstools"
@@ -50,13 +50,13 @@ make_host() {
 
 makeinstall_init() {
   mkdir -p $INSTALL/usr/sbin
-    cp fsck.fat $INSTALL/usr/sbin
-    ln -sf fsck.fat $INSTALL/usr/sbin/fsck.msdos
-    ln -sf fsck.fat $INSTALL/usr/sbin/fsck.vfat
+    cp src/fsck.fat $INSTALL/usr/sbin
+    ln -sf src/fsck.fat $INSTALL/usr/sbin/fsck.msdos
+    ln -sf src/fsck.fat $INSTALL/usr/sbin/fsck.vfat
 }
 
 makeinstall_host() {
   mkdir -p $TOOLCHAIN/sbin
-    cp mkfs.fat $TOOLCHAIN/sbin
-    ln -sf mkfs.fat $TOOLCHAIN/sbin/mkfs.vfat
+    cp src/mkfs.fat $TOOLCHAIN/sbin
+    ln -sf src/mkfs.fat $TOOLCHAIN/sbin/mkfs.vfat
 }
