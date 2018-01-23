@@ -188,6 +188,9 @@
 "/tmp/cores/fbalpha_libretro.so;"\
 "/tmp/cores/pcsx_rearmed_libretro.so"
 
+  # override some playlist core assignation
+    #RA_PLAYLIST_CORES="${RA_PLAYLIST_CORES//parallel_n64/mupen64plus}"
+
   # disable some cores
     LIBRETRO_CORES="${LIBRETRO_CORES//2048/}"
     LIBRETRO_CORES="${LIBRETRO_CORES//4do/}"
