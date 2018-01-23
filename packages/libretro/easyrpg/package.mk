@@ -20,7 +20,6 @@
 
 PKG_NAME="easyrpg"
 PKG_VERSION="05e2971"
-PKG_REV="2"
 PKG_ARCH="any"
 PKG_LICENSE="GPLv3"
 PKG_SITE="https://github.com/libretro/easyrpg-libretro"
