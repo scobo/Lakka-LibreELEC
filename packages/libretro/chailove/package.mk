@@ -19,8 +19,7 @@
 ################################################################################
 
 PKG_NAME="chailove"
-PKG_VERSION="b9ef6df"
-PKG_REV="1"
+PKG_VERSION="2fa61b7"
 PKG_ARCH="any"
 PKG_LICENSE="MIT"
 PKG_SITE="https://github.com/RobLoach/ChaiLove"
