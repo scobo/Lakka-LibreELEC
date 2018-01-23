@@ -19,8 +19,7 @@
 ################################################################################
 
 PKG_NAME="o2em"
-PKG_VERSION="8ce8eaa"
-PKG_REV="1"
+PKG_VERSION="c3dbcfa"
 PKG_ARCH="any"
 PKG_LICENSE="Artistic License"
 PKG_SITE="https://github.com/libretro/libretro-o2em.git"
