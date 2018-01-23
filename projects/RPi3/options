@@ -198,7 +198,7 @@
     #LIBRETRO_CORES="${LIBRETRO_CORES//atari800/}"
     #LIBRETRO_CORES="${LIBRETRO_CORES//beetle-lynx/}"
     #LIBRETRO_CORES="${LIBRETRO_CORES//beetle-ngp/}"
-    LIBRETRO_CORES="${LIBRETRO_CORES//beetle-pcfx/}"
+    #LIBRETRO_CORES="${LIBRETRO_CORES//beetle-pcfx/}"
     LIBRETRO_CORES="${LIBRETRO_CORES//beetle-saturn/}"
     LIBRETRO_CORES="${LIBRETRO_CORES//beetle-supergrafx/}"
     LIBRETRO_CORES="${LIBRETRO_CORES//beetle-vb/}"
