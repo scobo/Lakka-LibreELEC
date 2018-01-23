@@ -19,8 +19,7 @@
 ################################################################################
 
 PKG_NAME="vice"
-PKG_VERSION="8139feb"
-PKG_REV="1"
+PKG_VERSION="928f2c9"
 PKG_ARCH="any"
 PKG_LICENSE="GPLv2"
 PKG_SITE="https://github.com/libretro/vice-libretro"
