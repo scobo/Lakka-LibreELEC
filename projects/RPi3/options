@@ -202,7 +202,7 @@
     LIBRETRO_CORES="${LIBRETRO_CORES//beetle-saturn/}"
     #LIBRETRO_CORES="${LIBRETRO_CORES//beetle-supergrafx/}"
     #LIBRETRO_CORES="${LIBRETRO_CORES//beetle-vb/}"
-    LIBRETRO_CORES="${LIBRETRO_CORES//beetle-wswan/}"
+    #LIBRETRO_CORES="${LIBRETRO_CORES//beetle-wswan/}"
     LIBRETRO_CORES="${LIBRETRO_CORES//cap32/}"
     LIBRETRO_CORES="${LIBRETRO_CORES//chailove/}"
     LIBRETRO_CORES="${LIBRETRO_CORES//citra/}"
