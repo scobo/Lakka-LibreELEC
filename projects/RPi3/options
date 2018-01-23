@@ -189,13 +189,13 @@
 "/tmp/cores/pcsx_rearmed_libretro.so"
 
   # override some playlist core assignation
-    RA_PLAYLIST_CORES="${RA_PLAYLIST_CORES//parallel_n64/mupen64plus}"
+    RA_PLAYLIST_CORES="${RA_PLAYLIST_CORES//parallel-n64/mupen64plus}"
 
   # disable some cores
     #LIBRETRO_CORES="${LIBRETRO_CORES//2048/}"
     #LIBRETRO_CORES="${LIBRETRO_CORES//4do/}"
     #LIBRETRO_CORES="${LIBRETRO_CORES//81/}"
-    LIBRETRO_CORES="${LIBRETRO_CORES//atari800/}"
+    #LIBRETRO_CORES="${LIBRETRO_CORES//atari800/}"
     LIBRETRO_CORES="${LIBRETRO_CORES//beetle-lynx/}"
     LIBRETRO_CORES="${LIBRETRO_CORES//beetle-ngp/}"
     LIBRETRO_CORES="${LIBRETRO_CORES//beetle-pcfx/}"
@@ -222,7 +222,7 @@
     LIBRETRO_CORES="${LIBRETRO_CORES//meowpc98/}"
     LIBRETRO_CORES="${LIBRETRO_CORES//o2em/}"
     LIBRETRO_CORES="${LIBRETRO_CORES//openlara/}"
-    LIBRETRO_CORES="${LIBRETRO_CORES//parallel-n64/}"
+    LIBRETRO_CORES="${LIBRETRO_CORES//mupen64plus/}"
     LIBRETRO_CORES="${LIBRETRO_CORES//pocketcdg/}"
     LIBRETRO_CORES="${LIBRETRO_CORES//ppsspp/}"
     LIBRETRO_CORES="${LIBRETRO_CORES//prosystem/}"
